@@ -12,13 +12,12 @@ def create_reddit():
     return reddit
 
 
-def scrape_subreddit(subreddit, cooldown=5):
+def scrape_subreddit(subreddit, cooldown=5, post_limit=10):
     reddit = create_reddit()
     results = []
 
     s = reddit.subreddit(subreddit)
-    print(f'scraping {subreddit}...')
-    for n, submission in enumerate(s.new(limit=10)):
+    for n, submission in enumerate(s.new(limit=post_limit)):
         post_data = {
             'id': submission.id,
             'title': submission.title,
@@ -32,3 +31,5 @@ def scrape_subreddit(subreddit, cooldown=5):
         if not n % 5:
             sleep(cooldown)
     return results
+
+
