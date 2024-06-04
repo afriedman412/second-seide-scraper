@@ -1,0 +1,6 @@
+praw
+pandas
+requests
+tqdm
+python-dotenv
+flask
