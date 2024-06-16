@@ -25,3 +25,6 @@ update-checker==0.18.0
 urllib3==2.2.1
 websocket-client==1.8.0
 Werkzeug==3.0.3
+flask_sqlalchemy==3.1.1
+mysqlclient==2.2.4
+gunicorn==22.0.0
